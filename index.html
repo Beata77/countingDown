@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="countingDown.css" />
+	</head>
+	
+	<body>
+		
+		<header>
+            <h1>Counting down!</h1>
+            
+
+		</header>
+		<main>
+         <label><h2>Set the date you are counting down:</h2></label>
+         <div></div><input type="date" 
+            id="countDown" placeholder="dd-mm-yyyy" min="1890-01-01" max="3000-12-31"><br><br></div>
+			<input type="button" button style="height:30px;width:70px"  onclick="showTime()" value="submit">
+            <p id="demo"></p>
+            <script>
+            // Set the date we're counting down to
+
+
+            showTime = () => {
+                setInterval(function(){
+                
+                    let countDownDate = new Date(document.getElementById("countDown").value);
+                
+                // Get today's date and time
+                    let now = new Date();
+
+                // Find the distance between now and the count down date
+                let distance = countDownDate.getTime() - now.getTime();
+
+                // Time calculations for days, hours, minutes and seconds
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the element with id="demo"
+                document.getElementById("demo").innerHTML = "You have " + days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s " + "left until the selected date.";
+            }, 1000);
+        }
+                // If the count down is finished, write some text
+             //   if (distance < 0) {
+               //  clearInterval(x);
+                 //document.getElementById("demo").innerHTML = "EXPIRED";
+                 //}      
+                //}, 1000);
+            </script>
+		</main>
+		<footer>
+		
+		</footer>
+	</body>
+</html>

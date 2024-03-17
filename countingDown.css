@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(91, 140, 180);
+    display: block;
+    
+}
+
+h1, label {
+    color: rgb(235, 235, 140);
+    justify-content: center;
+}
+
+#demo {
+    font-size: 2em;
+}
